@@ -1,17 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col>
+                <h3>Peliculas Nuevas</h3>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <app-slideshow-backdrop [peliculas]="peliculasRecientes"></app-slideshow-backdrop>
+
+    <!-- 
+    <ion-slides [options]="slidesOpts">
+        <ion-slide *ngFor="let pelicula of peliculasRecientes">
+            //<h1>{{ pelicula.backdrop_path }}</h1>//
+            <ion-card>
+                <img [src]="pelicula.backdrop_path | imagen">
+            </ion-card>
+            ////para que el usuario sepa que hay mas imagenes y pueda hacer scroll 
+        </ion-slide>
+    </ion-slides>
+ -->
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col>
+                <h3>Cartelera</h3>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <app-slideshow-poster [peliculas]="peliculasRecientes"></app-slideshow-poster>
+    <!--  <app-slideshow-poster [peliculas]="peliculasRecientes"></app-slideshow-poster> -->
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col>
+                <h3>Populares</h3>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <!-- solo estamos llamando a la funcion cargar mas no vamos a emitir nada -->
+    <app-slideshow-pares [peliculas]="populares" (cargarMas)="cargarMas()"></app-slideshow-pares>
 </ion-content>

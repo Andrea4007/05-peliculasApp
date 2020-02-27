@@ -1,0 +1,9 @@
+<ion-slides [options]="slidesOpts">
+    <ion-slide *ngFor="let pelicula of peliculas">
+        <!-- <h1>{{ pelicula.backdrop_path }}</h1> -->
+        <ion-card (click)="verDetalle(pelicula.id)">
+            <img class="poster" [src]="pelicula.poster_path | imagen">
+        </ion-card>
+        <!--    //para que el usuario sepa que hay mas imagenes y pueda hacer scroll -->
+    </ion-slide>
+</ion-slides>
