@@ -76,6 +76,7 @@
     <ion-toolbar>
         <ion-buttons slot="start">
             <ion-button (click)="regresar()">
+                <!-- elemento entre corchetes propiedad de angular -->
                 <ion-icon slot="start" name="arrow-back-outline">
                 </ion-icon>
                 <ion-label>
@@ -88,7 +89,8 @@
                 <ion-label>
                     Favorito
                 </ion-label>
-                <ion-icon slot="end" name="star-outline">
+                <!-- elemento entre corchetes propiedad de angular -->
+                <ion-icon slot="end" [name]="estrella">
                 </ion-icon>
             </ion-button>
         </ion-buttons>

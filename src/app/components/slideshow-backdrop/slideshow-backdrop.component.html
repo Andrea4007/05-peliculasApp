@@ -1,7 +1,7 @@
 <ion-slides [options]="slidesOpts">
-    <ion-slide *ngFor="let pelicula of peliculas">
+    <ion-slide *ngFor="let pelicula of peliculas | filtroImagen">
         <!-- <h1>{{ pelicula.backdrop_path }}</h1> -->
-        <ion-card (click)="verDetalle(pelicula.id)">
+        <ion-card (click)="verDetalle(pelicula.id)" *ngIf="pelicula.backdrop_path">
             <img [src]="pelicula.backdrop_path | imagen">
         </ion-card>
         <!--    //para que el usuario sepa que hay mas imagenes y pueda hacer scroll -->

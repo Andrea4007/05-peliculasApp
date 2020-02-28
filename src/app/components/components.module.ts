@@ -17,6 +17,7 @@ import { DetalleComponent } from './detalle/detalle.component';
   declarations: [SlideshowBackdropComponent,SlideshowPosterComponent, SlideshowParesComponent, DetalleComponent],
   imports: [
     CommonModule,
+    PipesModule,
     //importamos el ionic module porque vamos a ocupar cards y demas dsiectivas y compoonentes
     IonicModule,
     //el pipe tambien lo vamos a importar porque lo vamos a estar ocupando
